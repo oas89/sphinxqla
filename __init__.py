@@ -52,7 +52,7 @@ class SphinxQuery(Query):
 
     @_generative(Query._no_statement_condition, Query._no_limit_offset)
     def match(self, **kwargs):
-        expression = ' '.join([
+        expression = u' | '.join([
             u'@{} {}'.format(field, escape_match(text))
             for field, text in kwargs.iteritems()
         ])
